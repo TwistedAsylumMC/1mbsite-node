@@ -1,0 +1,24 @@
+{
+  "name": "1mbsite-node",
+  "version": "1.0.0",
+  "description": "NodeJS Library for interacting with the 1MB API",
+  "main": "mbsite.js",
+  "dependencies": {
+    "querystring": "^0.2.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TwistedAsylumMC/1mbsite-node.git"
+  },
+  "author": "TwistedASylumMC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TwistedAsylumMC/1mbsite-node/issues"
+  },
+  "homepage": "https://github.com/TwistedAsylumMC/1mbsite-node#readme"
+}
