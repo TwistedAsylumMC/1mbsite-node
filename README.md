@@ -24,21 +24,21 @@ Now you are ready to use the API.
 > Note: This process is not required as this method is called in the constructor of the API class.
 ```javascript
 API.verifyKey(function(result){
-    // Code here will be executed when the request has returned data
+// Code here will be executed when the request has returned data
 });
 ```
 The verifyKey() method requires a callback parameter. A JSON object is passed through the callback and has an "error" key and a "data key". The data key here is unused but the error key will be true on success, or an error string on failure.
 ### Deploying to your 1mb.site
 ```javascript
 API.deploy("resource", "code", function(result){
-    // Code here will be executed when the request has returned data
+// Code here will be executed when the request has returned data
 });
 ```
 The deploy() method requires a string parameter for the resource you want to deploy to, another string parameter for the code you want to deploy and a callback parameter. The callback parameter passes through a JSON object which has the keys "error" and "data". Once again, the data key is unused but the error key either returns true on success, or an error string on failure.
 ### Viewing a 1mb.site resource
 ```javascript
 API.viewSite("site name", "resource", function(result){
-    // Code here will be executed when the request has returned data
+// Code here will be executed when the request has returned data
 });
 ```
 The viewSite() method requires a string parameter for the site name (a username), another string parameter for the resource you want to view and a callback parameter. The callback parameter passes through a JSON object with the keys "error" and "data". If there are no errors, the error key will be false and the data key will be a string of the code of the provided resource. If there is an error, the error will be a string error and the data key will be false.
