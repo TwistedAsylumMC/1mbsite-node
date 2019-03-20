@@ -1,8 +1,8 @@
-#1mbsite NodeJS
+# 1mbsite NodeJS
 1mbsite NodeJS is an NPM package built to communicate with the [1mbsite API](https://gist.github.com/DaltonWebDev/739ddb6bb17004f72bca8f74fc874bfd).
 > NOTE: No functions in this package are syncronous, they all have callback parameters which are ran when the request package returns data
 
-##Getting Started
+## Getting Started
 Before you begin, you must install the NPM package by executing the following command:
 ```
 npm install 1mbsite-node --save
@@ -19,8 +19,8 @@ const API = mbsite.API;
 ```
 Now you are ready to use the API.
 
-##Examples
-###Verifying your API key
+## Examples
+### Verifying your API key
 > NOTE: This process is not required as this method is called in the constructor of the API class
 ```javascript
 API.verifyKey(function(result){
@@ -28,7 +28,7 @@ API.verifyKey(function(result){
 });
 ```
 The veryifyKey() method requires a callback parameter. A JSON object is passed through the callback and has an "error" key and a "data key". The data key here is unused but the error key will be true on success, or an error string on failure
-###Deploying to your 1mb.site
+### Deploying to your 1mb.site
 ```javascript
 API.deploy("resource", "code", function(result){
 	// Code here will be executed when the request has returned data
