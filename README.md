@@ -1,4 +1,4 @@
-# 1mbsite NodeJS
+# 1mbsite NodeJS ![npm](https://img.shields.io/npm/v/1mbsite-node.svg)
 1mbsite NodeJS is an NPM package built to communicate with the [1mbsite API](https://gist.github.com/DaltonWebDev/739ddb6bb17004f72bca8f74fc874bfd).
 > Note: No functions in this package are synchronous, they all have callback parameters which are run when the request package returns data
 
