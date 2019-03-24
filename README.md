@@ -1,4 +1,4 @@
-# 1mbsite NodeJS ![npm](https://img.shields.io/npm/v/1mbsite-node.svg)
+# 1mbsite NodeJS ![Version](https://img.shields.io/github/package-json/v/TwistedAsylumMC/1mbsite-node.svg?style=for-the-badge) ![Weekly Downloads](https://img.shields.io/npm/dw/1mbsite-node.svg?style=for-the-badge) ![Licence](https://img.shields.io/npm/l/1mbsite-node.svg?style=for-the-badge)
 1mbsite NodeJS is an NPM package built to communicate with the [1mbsite API](https://gist.github.com/DaltonWebDev/739ddb6bb17004f72bca8f74fc874bfd).
 > Note: No functions in this package are synchronous, they all have callback parameters which are run when the request package returns data
 
@@ -42,5 +42,12 @@ API.viewSite("site name", "resource", function(result){
 });
 ```
 The viewSite() method requires a string parameter for the site name (a username), another string parameter for the resource you want to view and a callback parameter. The callback parameter passes through a JSON object with the keys "error" and "data". If there are no errors, the error key will be false and the data key will be a string of the code of the provided resource. If there is an error, the error will be a string error and the data key will be false.
+### Listing a sites resources
+```javascript
+API.listResources("site name", function(result){
+// Code here will be executed when the request has returned data
+});
+```
+The listResources() method requires a string parameter for the site name (a username) and a callback parameter. The callback parameter passes through a JSON object with the keys "error" and "data". If there is an error, the error key will be an error string, but if there is no error, error will be false and the data key will be an array with all the resources on a site.
 
 API made with :heart: by TwistedAsylumMC!

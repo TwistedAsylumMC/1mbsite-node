@@ -1,7 +1,7 @@
 const querystring = require("querystring");
 const request = require("request");
 
-class API {
+class API{
 
 	constructor(username, key){
 		this.api_url = "https://api.1mb.site";
@@ -17,61 +17,39 @@ class API {
 	}
 
 	verifyKey(callback){
-		let postData = {
+		this.performRequest({
 			action: "keyverify",
 			username: this.username,
 			key: this.key
-		};
-		let options = {
-			url: this.api_url,
-			method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Content-Length": Buffer.byteLength(querystring.stringify(postData))
-			},
-			form: postData
-		};
-		request(options, function(error, response, body){
-			if(error){
-				throw new Error(error);
-			}else{
-				callback(JSON.parse(body));
-			}
-		});
+		}, callback);
 	}
 
 	deploy(resource, code, callback){
-		let postData = {
+		this.performRequest({
 			action: "deploy",
 			site: this.username,
 			key: this.key,
 			resource: resource,
 			code: code
-		};
-		let options = {
-			url: this.api_url,
-			method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Content-Length": Buffer.byteLength(querystring.stringify(postData))
-			},
-			form: postData
-		};
-		request(options, function(error, response, body){
-			if(error){
-				throw new Error(error);
-			}else{
-				callback(JSON.parse(body));
-			}
-		});
+		}, callback);
 	}
 
 	viewSite(site, resource, callback){
-		let postData = {
+		this.performRequest({
 			action: "view",
 			site: site,
 			resource: resource
-		};
+		}, callback);
+	}
+
+	listResources(site, callback){
+		this.performRequest({
+			action: "resources",
+			site: site
+		}, callback);
+	}
+
+	performRequest(postData, callback){
 		let options = {
 			url: this.api_url,
 			method: "POST",
